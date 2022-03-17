@@ -1,0 +1,32 @@
+
+
+<h1 style="margin-left: 40%;">Regler Credit</h1>
+<br>
+<br>
+
+
+<form #creditForm="ngForm" style=" border: 2px solid; margin-left: 10%; margin-right: 10%;">
+    <div class="form-group" style="margin-left: 20%;">
+      <label >id Credit</label>
+      <input style="width: 50%;" type="number" readonly class="form-control" value="{{id}}"     >
+      
+    </div>
+    
+    <div class="form-group" style="margin-left: 20%;">
+        <label >montant</label>
+        <input style="width: 50%;" type="number" class="form-control" name="montant" #montant="ngModel" [(ngModel)]="Regle.montant" placeholder="Enter montant">
+        
+      </div>
+      
+
+    <div class="form-group" style="margin-left: 20%;">
+        <label >date</label>
+        <input style="width: 50%;" type="text" class="form-control" name="date" readonly value="{{dv}}"  >
+        
+      </div>
+     <br>
+      <div style="-ms-flex-align: center;">
+      <button style="margin-left: 20%; margin-right: 20%; width: 50px; height: 50px; background-color: transparent; border: 0ch;"  type="submit"  ><mat-icon style="color: red;width: 50px;">cancel</mat-icon></button>
+    <button  type="submit" (click)="regler()" style="border: 0px; background-color: transparent;" ><mat-icon style="color: green;">assignment_turned_in</mat-icon></button></div>
+    <br>
+  </form>

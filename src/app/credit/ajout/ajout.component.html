@@ -1,0 +1,40 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<h1 style="margin-left: 20%;">Ajouter nouveau Credit</h1>
+<br>
+<br>
+
+
+<form #creditForm="ngForm" style=" border: 2px solid; margin-left: 10%; margin-right: 10%;">
+    
+    <div class="form-group" style="margin-left: 20%; width: 100%;">
+      <label >Type</label>
+      <input style="width: 50%;" type="text" class="form-control" name="type" #type="ngModel" [(ngModel)]="credit.type" placeholder="type">
+    </div>
+    <div class="form-group" style="margin-left: 20%; width: 100%;">
+        <label >montant</label>
+        <input style="width: 50%;" type="number" class="form-control" name="montant" #montant="ngModel" [(ngModel)]="credit.montant" placeholder="Enter montant">
+        
+      </div>
+      <div class="form-group" style="margin-left: 20%; width: 100%;">
+        <label >reste</label>
+        <input style="width: 50%;" type="number" readonly class="form-control" value ="{{credit.montant}}" name="reste" #reste="ngModel" [(ngModel)]="credit.montant" placeholder="reste">
+      </div>
+
+    <div class="form-group" style=" -ms-flex-align: center;margin-left: 20%; width: 100%;">
+        <label >date</label>
+        <input style="width: 50%;" type="date" class="form-control" name="date" #date="ngModel" [(ngModel)]="credit.date" >
+        
+      </div>
+      <div class="form-group" style="-ms-flex-align: center;margin-left: 20%; width: 100%;">
+        <label >status</label>
+        <input style="width: 50%;" type="text" class="form-control" readonly value="1" name="status" #status="ngModel" [(ngModel)]="credit.status" >
+        
+      </div>
+      
+     <br>
+      <div style="-ms-flex-align: center;">
+      <button style="margin-left: 20%; margin-right: 20%; width: 50px; height: 50px; background-color: transparent; border: 0ch;"  type="submit"  (click)="redirect()" mat-dialog-close ><mat-icon style="color: red;width: 50px;">cancel</mat-icon></button>
+    <button  type="submit" style="border: 0px; background-color: transparent;" (click)="save()" mat-dialog-close><mat-icon style="color: green;">assignment_turned_in</mat-icon></button></div>
+    <br>
+  </form>

@@ -1,0 +1,27 @@
+
+<h2 class="font" style="margin-left: 20%;" center>Historique de Reglement</h2>
+<br><br>
+<table style="width: 350px; margin-left: 10%;" class="table dark">
+    <thead class="thead">
+        <th style="width: 10px;">id credit</th>
+       
+        <th style="width: 30px;">montant</th>
+        <th style=" width: 50px;">date</th>
+       
+    </thead>
+
+    <tbody class="tbody">
+        <tr *ngFor="let r of regle; let i for index">
+           
+            <td style="width: 20px">{{r.id_credit}}</td>
+           
+            <td style=" width: 30px;">{{r.montant}}</td>
+            <td type="date" style=" width: 50px;">{{r.date |date: 'mediumDate'}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+<div style="margin-left: 30%;" *ngIf="regle.length == 0"> tu n'as aucune historique
+    <br><br>
+     <button style="margin-left: 20%;" mat-dialog-close="" class="btn btn-danger">retour</button>
+</div>

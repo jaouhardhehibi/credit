@@ -1,0 +1,18 @@
+.icon {
+    
+ transition: all 0.3s linear; 
+}
+
+// .icon {
+//     font-size: 30px;
+// }
+.iconAjout {
+    font-size: 50px;
+}
+
+.hiddenTD{
+    display: none;
+}
+.icon:hover {
+transform: scale(2.3);
+}

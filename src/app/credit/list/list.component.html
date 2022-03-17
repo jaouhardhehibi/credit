@@ -1,0 +1,37 @@
+<br><div style="max-width: 70%;margin-left: 10%;" >
+    <h1 style="margin-left: 50%; font-family: Georgia, 'Times New Roman', Times, serif; ">Liste Credit</h1>
+    <br>
+
+    <input style="width: 25%;" name="searchText" class="form-control" [(ngModel)]="searchText" type="text" placeholder="filter">
+    <button style="background-color: transparent; border: 0ch; width: 15%; height: 30%; margin-left: 80%;" (click)="openDialog()"><mat-icon class="iconAjout" style="color: blue; ">add_circle</mat-icon></button><br>
+    <table class="table" *ngIf="(credit | filerSearch : searchText).length>0">
+        <thead>
+            <th>id</th>
+            <th>type</th>
+            <th>montant</th>
+            <th>reste</th>
+            <th>date</th>
+            <th>status</th>
+            <th>editer</th>
+            <th>supprimer</th>
+            <th>historique</th>
+        </thead>
+        <tbody>
+            <tr [ngStyle]="{'background-color':item.montant == 0 ? 'rgb(43, 255, 0)':''}" *ngFor="let item of credit | filerSearch : searchText"   >
+               
+                <td>{{item.id_credit}}</td>
+                <td>{{item.type}}</td>
+                <td >{{item.montant}}</td>
+                <td>{{item.reste}}</td>
+                <td>{{item.date |date}}</td>
+                <td>{{item.status}}</td>
+                <td  ><button [ngClass]="{'hiddenTD':item.montant==0}"    style="background-color: transparent; border: 0ch;" (click)="openDialogEdit(item.id_credit)"><mat-icon  class="icon" style="color: blue;">edit</mat-icon></button> </td>
+                <td><button style="border: 0ch; background-color: transparent;" (click)="deleteCr(item.id_credit)"><mat-icon class="icon" style="color: red;">delete</mat-icon></button></td>
+                <td><button style="border: 0ch; background-color: transparent;" (click)="openDialogHistorique(item.id_credit)"><a><mat-icon class="icon" style="color: rgb(4, 0, 255);">list_alt</mat-icon></a></button></td>
+                
+            </tr>
+        </tbody>
+    </table>
+<br><br>
+
+</div>

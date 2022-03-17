@@ -1,0 +1,21 @@
+.thead {
+    flex: 0 0 10%;
+    background-color: gray;
+}
+.tbody {
+    flex: 0 0 10%;
+}
+table {
+    position: inherit;
+}
+table th, table td {
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: .75em;
+    border-right: 1px solid rgba(0,0,0,0.05);
+  }
+  .font{
+      font-family: "Fira Sans", Arial, sans-serif;
+  }
